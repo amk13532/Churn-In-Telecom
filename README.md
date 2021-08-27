@@ -1,65 +1,64 @@
-# Phase 1 Project
+# Churning out a Solution
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
+**Authors**: Matthe Gayanelo
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project/master/awesome.gif)
+## Business Problem
 
-Now you will put your new skills to use with a large end-of-Phase project! This project should take 20 to 30 hours to complete.
+SyriaTel is experiencing a 15% churn rate
 
-## Project Overview
+## Data
 
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
 
-### Business Problem
+Source: SyriaTel
+Analytical Prupose: General Classification
+Target Variable: Churn
+Target Variable Use: Determine whether or not a customer will churn or out of the company.
 
-Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
 
-### The Data
+***
 
-In the folder `zippedData` are movie datasets from:
+## Methods
 
-* [Box Office Mojo](https://www.boxofficemojo.com/)
-* [IMDB](https://www.imdb.com/)
-* [Rotten Tomatoes](https://www.rottentomatoes.com/)
-* [TheMovieDB](https://www.themoviedb.org/)
-* [The Numbers](https://www.the-numbers.com/)
+1. Initial Analysis of Data, exploring potential null values, statistical metrics and initial isolation of key features
+2. Multi Model Analysis to determine best model to use
+3. Class Imbalance Analysis
+4. Model Optimization
+5. Feature Importance exploration
+6. Raw Data Exploration to validate Model Feature IMportance
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
+## Results
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+### Random Forests were chosen due to the following metrics:
 
-## Deliverables
+Model Test Precision: 0.8205128205128205
+Model Test Recall: 0.8767123287671232
+Model Test Accuracy: 0.954
+Model Test F1: 0.847682119205298
 
-There are three deliverables for this project:
+### Feature Importance Exploration:
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+Customer Service Calls, Data Time Minutes and Day Time Charges were found to be the most important features
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+### Raw Data Exploration:
 
-### Key Points
+Mean of Customer Service Calls For Non Churners: 1.4498245614035088
+Standard Deviation of Customer Service Calls: 1.3152936866709521
+Mean of Customer Service Calls for Churners: 2.229813664596273
 
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
+Mean of total day minutes Non Churners: 175.1757543859649
+Standard Deviation of total day minutes: 54.45921766392581
+Mean of total day minutes for Churners: 206.91407867494823
 
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
+Churners displayed higher usage of their plans, and also a greater amount of customer service calls.
 
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
+## Conclusions
 
-## Getting Started
+### Usage Results
 
-Please start by reviewing this assignment, the rubric at the bottom of it, and the "Project Submission & Review" page. If you have any questions, please ask your instructor ASAP.
+1. Users with higher usage during the day / charges are clearly more inclined to churn
+2. This clearly shows that heavy usage users are not experiencing a satisfactory service
 
-Next, we recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
+### Proposition
 
-Alternatively, you can fork [the Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
-
-## Project Submission and Review
-
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
-
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+1. Provide a service that scales with usage in order to save 15% of the business
+2. Specifically when a user starts exceeding 170 / 175 minutes per week offer reduce costs and a higher level of service
